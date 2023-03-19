@@ -17,13 +17,13 @@ require('dotenv').config();
 const salt = bcrypt.genSaltSync(10);
 const secret = "hiqhwiqwoqkwpq"
 
-app.use(cors({ credentials: true, origin: 'http://localhost:3000' }));
-//app.use(cors({ credentials: true, origin: 'https://cradle0ffilth.github.io' }));
+//app.use(cors({ credentials: true, origin: 'http://localhost:3000' }));
+app.use(cors({ credentials: true, origin: 'https://cradle0ffilth.github.io' }));
 app.use(express.json());
 app.use(cookiePasrser());
 app.use('/uploads', express.static(__dirname + '/uploads'));
 
-const url = 'mongodb+srv://blog:c98E7qKCzUgZ1Gmj@cluster0.ctuzl5r.mongodb.net/?retryWrites=true&w=majority';
+const url = 'mongodb+srv://sunkist:V4kpGX3HoarCBkre@myblog.qmj5u6p.mongodb.net/?retryWrites=true&w=majority';
 
 async function connect() {
     try {
