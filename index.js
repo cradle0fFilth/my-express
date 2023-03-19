@@ -17,8 +17,8 @@ require('dotenv').config();
 const salt = bcrypt.genSaltSync(10);
 const secret = "hiqhwiqwoqkwpq"
 
-//app.use(cors({ credentials: true, origin: 'http://localhost:3000' }));
-app.use(cors({ credentials: true, origin: 'https://cradle0ffilth.github.io' }));
+app.use(cors({ credentials: true, origin: 'http://localhost:3000' }));
+//app.use(cors({ credentials: true, origin: 'https://cradle0ffilth.github.io' }));
 app.use(express.json());
 app.use(cookiePasrser());
 app.use('/uploads', express.static(__dirname + '/uploads'));
