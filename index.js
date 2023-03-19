@@ -21,8 +21,7 @@ app.use(express.json());
 app.use(cookiePasrser());
 app.use('/uploads', express.static(__dirname + '/uploads'));
 
-
-const url = 'mongodb+srv://sunkist:V4kpGX3HoarCBkre@myblog.qmj5u6p.mongodb.net/?retryWrites=true&w=majority'
+const url = process.env.MONGODB_URI;
 
 async function connect() {
     try {
