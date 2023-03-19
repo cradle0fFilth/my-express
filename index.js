@@ -11,6 +11,8 @@ const cookiePasrser = require('cookie-parser');
 const multer = require('multer');
 const uploadMiddleware = multer({ dest: 'uploads/' });
 const fs = require('fs');
+require('dotenv').config();
+
 
 const salt = bcrypt.genSaltSync(10);
 const secret = "hiqhwiqwoqkwpq"
@@ -21,7 +23,12 @@ app.use(express.json());
 app.use(cookiePasrser());
 app.use('/uploads', express.static(__dirname + '/uploads'));
 
+<<<<<<< HEAD
 const url = process.env.MONGODB_URI;
+=======
+
+const url = process.env.MONGO_URL;
+>>>>>>> a9dd632 (add env)
 
 async function connect() {
     try {
