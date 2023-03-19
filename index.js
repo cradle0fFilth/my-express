@@ -23,12 +23,7 @@ app.use(express.json());
 app.use(cookiePasrser());
 app.use('/uploads', express.static(__dirname + '/uploads'));
 
-<<<<<<< HEAD
 const url = process.env.MONGODB_URI;
-=======
-
-const url = process.env.MONGO_URL;
->>>>>>> a9dd632 (add env)
 
 async function connect() {
     try {
