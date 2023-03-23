@@ -121,7 +121,9 @@ app.get('/post/:id', async (req, res) => {
 });
 
 
-app.listen(4000);
+app.listen(4000，"0.0.0.0",()=>{
+    console.log('server is running!');
+});
 //V4kpGX3HoarCBkre
 
 // mongodb+srv://blog:c98E7qKCzUgZ1Gmj@cluster0.ctuzl5r.mongodb.net/?retryWrites=true&w=majority
