@@ -1,4 +1,5 @@
 const express = require('express');
+const https = require('https');
 const path = require('path');
 const cors = require('cors');
 const mongoose = require("mongoose")
@@ -16,6 +17,11 @@ require('dotenv').config();
 
 const salt = bcrypt.genSaltSync(10);
 const secret = "hiqhwiqwoqkwpq"
+
+const privateKey = fs.readFileSync("key.pem", "utf8");
+const certificate = fs.readFileSync("cert.pem", "utf8");
+const credentials = { key: privateKey, cert: certificate };
+const httpsServer = https.createServer(credentials, app);
 
 //app.use(cors({ credentials: true, origin: 'http://localhost:3000' }));
 app.use(cors({ credentials: true, origin: 'https://cradle0ffilth.github.io' }));
@@ -121,9 +127,10 @@ app.get('/post/:id', async (req, res) => {
 });
 
 
-app.listen(4000,"0.0.0.0",()=>{
-    console.log('server is running!');
-});
+httpsServer.listen(4000, () => {
+    console.log("HTTPS Server running on port 4000");
+  });
+  
 //V4kpGX3HoarCBkre
 
 // mongodb+srv://blog:c98E7qKCzUgZ1Gmj@cluster0.ctuzl5r.mongodb.net/?retryWrites=true&w=majority
