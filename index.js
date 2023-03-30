@@ -127,7 +127,7 @@ app.get('/post/:id', async (req, res) => {
 });
 
 
-httpsServer.listen(4000, () => {
+httpsServer.listen(4000,'0.0.0.0', () => {
     console.log("HTTPS Server running on port 4000");
   });
   
